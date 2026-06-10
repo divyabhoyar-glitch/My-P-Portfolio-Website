@@ -1,0 +1,669 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth; /* Isse page aaram se scroll hokar niche jayega */
+    scroll-padding-top: 90px; /* Taaki fixed navbar aapke section ke title ko na chhupaye */
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background-color: #0d0d0d;
+    color:white;
+}
+.navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position : fixed;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+.logo {
+    font-size:30px;
+    font-weight: 700;
+    color: #01f493;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: #01f493;
+}
+.hero-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 120px 80px 0px 80px;
+
+    background: linear-gradient(to right, #000000, #022b1f);
+
+}
+
+.hero-image {
+    width:40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-box {
+    width:400px;
+    height:400px;
+    border-radius: 50%;
+    border: 5px solid #01f493;
+    box-shadow: 0 0 30px #01f493;
+    overflow: hidden;
+
+}
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+.image-box:hover {
+    transform: scale(1.05) !important; /* Halka sa zoom effect */
+    box-shadow: 0 0 45px #01f493;      /* Glow thoda aur badh jayega */
+}
+.hero-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.hero-content h2 {
+    font-size: 25px;
+    font-weight: 600;
+    animation: slideInLeft 2s ease-out forwards;
+    margin-left: 0px;
+    opacity: 0;
+}
+.hero-content h1 {
+    font-size: 70px;
+    font-weight: 700;
+    color:white;
+    animation: slideInLeft 2s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+.hero-content p {
+    font-size: 20px;
+    line-height: 35px;
+    color: #cccccc;
+    margin-bottom: 30px;
+    animation: slideInLeft 2s ease-out forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+.btn1, .btn2{
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size:18px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition:all 0.3s ease;
+
+    /* Animtion */
+    animation: slideInLeft 2s ease-out forwards;
+    animation-delay: 0.6;
+    
+}
+.btn1 {
+    background-color: #01f493;
+    color:black;
+
+}
+.btn1:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #01f493, 0 0 25px #01f493;
+}
+
+.btn2 {
+    background-color: transparent;
+    border:2px solid #01f493;
+
+    color: white;
+}
+
+.btn2:hover {
+    background-color: #01f493;
+    color:#000000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #01f493, 0 0 25px #01f493;
+
+}
+/* SOCIAL ICONS CONTAINER */
+.social-icons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    
+    /* Humne jo pehle animation banaya tha, use yahan bhi lagate hain */
+    animation: slideInLeft 2s ease-out forwards;
+    animation-delay: 0.8s; /* Yeh buttons ke bhi thodi der baad aayega */
+    opacity: 0;
+}
+
+/* HAR EK ICON KA ROUND BOX */
+.social-icons a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111111; /* Dark gray circle background */
+    color: white;             /* Icon color white */
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 255, 153, 0.1); /* Halka sa neon border tint */
+}
+
+.social-icons a:hover {
+    background-color: #01f493; /* Background neon green ho jayega */
+    color: black;              /* Icon black ho jayega */
+    box-shadow: 0 0 15px #01f493; /* Neon glowing effect */
+    transform: translateY(-5px) !important; /* Halka sa upar float karega */
+}
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+.skills-section {
+    padding: 100px 80px;
+    background-color: #111111;
+}
+.skills-section h1 {
+    text-align:center;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 50px;
+}
+.skills-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation:revealOnScroll linear both;
+    animation-timeline:view();
+    animation-range: entry 10% cover 40%;
+}
+.skill-card {
+    width: 220px;
+    height:220px;
+    background-color:#1a1a1a;
+    border-radius : 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3 ease;
+}
+.skill-card i {
+    font-size: 70px;
+    margin-bottom: 20px;
+    color:#01f493;
+}
+.skill-card h2 {
+    font-size: 22px;
+    color:white;
+    font-weight: 600;
+}
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #01f493;
+}
+
+
+@keyframes revealOnScroll {
+    from {
+        opacity: 0;
+        transform: translateY(80px) scale(0.9); /* Shuruat me neeche dabba hoga aur chota hoga */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1); /* Samne aate hi normal size me set ho jayega */
+    }
+}
+
+.projects-section {
+    padding: 100px 80px;
+    background-color: #0d0d0d;
+}
+
+.projects-section h1 {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 60px;
+}
+.projects-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    animation: revealOnScroll linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+}
+.project-card {
+    width: 350px;
+    background-color: #1a1a1a;
+    overflow: hidden;
+    border-radius: 20px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s ease;
+}
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.project-card h2 {
+    font-size: 24px;
+    color: white;
+    padding: 20px 20px 10px 20px;
+}
+.project-card p {
+    font-size: 16px;
+    color: #cccccc;
+    padding: 0 20px 30px 20px;
+    line-height: 1.5;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #01f493;
+}
+
+
+
+/* ==========================================================================
+   ATTRACTIVE ABOUT PAGE STYLING
+   ========================================================================== */
+
+
+.nav-links a  {
+    text-decoration: none;
+    color:#a0a0a0;
+    font-size:16px;
+    margin-left:16px;
+    font-weight:15px;
+    padding:8px 16px;
+    border-radius:8px;
+    border: 2px solid transparent;
+    transition:all 0.3s ease;
+}
+.navbar .nav-links a.active {
+    color: #0d0d0d !important;
+    background-color: #00ff99 !important;
+    border-color: #00ff99 !important;
+    font-weight: 600 !important;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.4) !important;
+}
+.navbar .nav-links a.active:active {
+    background-color: #00ff99 !important;
+    color: #0d0d0d !important;
+}
+/* .nav-links a:hover {
+    color: #01f493;
+    border-color: #01f493;
+    background-color: rgba(0, 255, 153, 0.3);
+}
+.nav-links a:active {
+    color:#0d0d0d !important;
+    background-color: #01f493 !important;
+    border-color: #01f493 !important;
+    font-weight: 600;
+    box-shadow: 0 0 10px #01f493;
+} */
+.about-container {
+    min-height:100vh;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px 80px 80px;
+    background-color:#0d0d0d;
+    gap: 60px;
+}
+
+.about-text-content {
+    flex: 1.2;
+}
+
+.sub-heading {
+    color:#01f493;
+    font-size:14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    display:block;
+    margin-bottom: 10px;
+}
+
+.about-text-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color:white;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+.about-text-content h1 span {
+    color:#01f493;
+    text-shadow: 0 0 20px rgba(0, 255, 153, 0.2);
+}
+
+.about-text-content p {
+    font-size: 17px;
+    color:#a0a0a0;
+    line-height:1.7;
+    margin-bottom: 40px;
+}
+
+.my-skills h3 {
+    font-size:18px;
+    color:white;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.skills-grid {
+    display:flex;
+    gap:15px;
+    flex-wrap: wrap;
+}
+.skill-badge {
+    background-color: #141414;
+    border: 1px solid #222;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.skill-badge i {
+    color: #00ff99; /* Icons will be neon green */
+}
+
+/* Badge Hover Magic */
+.skill-badge:hover {
+    border-color: #00ff99;
+    background-color: rgba(0, 255, 153, 0.05);
+    transform: translateY(-3px);
+}
+
+/* Right Side: Glowing Photo Frame Logic */
+.about-image-box {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-frame {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #00ff99, #00b3ff); /* Glowing neon gradient border */
+    padding: 4px; /* Border thickness space */
+    box-shadow: 0 10px 40px rgba(0, 255, 153, 0.15);
+    transition: 0.4s ease;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px; /* Halka sa chota taaki main frame ke andar fit baithe */
+}
+
+/* Photo Hover Animation */
+.photo-frame:hover {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 15px 50px rgba(0, 255, 153, 0.3);
+}
+
+
+/* ==========================================================================
+   GLOWING CONTACT PAGE STYLING
+   ========================================================================== */
+
+.contact-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px;
+    background-color: #0d0d0d;
+}
+.contact-box {
+    background-color: #141414; /* Dark card background */
+    border: 1px solid #222;
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 550px; /* Form ko bohot zyada chouda hone se rokega */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.contact-box h2 {
+    font-size:32px;
+    font-weight:700;
+    color:white;
+    margin-bottom: 15px;
+}
+.contact-box h2 span {
+    color:#01f493;
+    text-shadow: 0 0 15px rgba(0, 255, 253, 0.2);
+}
+.contact-box p {
+    color:#a0a0a0;
+    font-size:15px;
+    line-height: 1.6;
+    margin-bottom:30px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.input-group label {
+    display: block;
+    color: #e0e0e0;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.input-group textarea {
+    resize: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #00ff99;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.2);
+    background-color: #111;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #00ff99;
+    color: #0d0d0d;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
+}
+
+.btn-submit i {
+    transition: 0.3s ease;
+}
+.btn-submit:hover {
+    background-color: #02e68a;
+    box-shadow: 0 0 25px rgba(0, 255, 153, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-submit:hover i {
+    transform: translate(3px, -3px); /* Paper plane real me udne jaisi animation degi */
+}
+
+/* ==========================================================================
+   SIMPLE & MODERN FOOTER STYLING
+   ========================================================================== */
+
+.my-clean-footer {
+    background-color: #111111; /* Halka sa dark background */
+    border-top: 2px solid #222; /* Top par ek clean border line */
+    padding: 60px 40px 20px; /* Top, side aur bottom padding */
+}
+
+/* Flexbox setup teeno columns ko ek line me lane ke liye */
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto; /* Content ko center me rakhne ke liye */
+    gap: 30px;
+}
+
+/* Left Column Styling */
+.footer-left h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.footer-left h2 span {
+    color: #00ff99; /* Green point dot */
+}
+.footer-left p {
+    color: #888;
+    font-size: 14px;
+}
+
+/* Center Column (Navigation Links) */
+.footer-center {
+    display: flex;
+    flex-direction: column; /* Links ek ke niche ek aayenge */
+    gap: 10px;
+}
+.footer-center h3, .footer-right h3 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.footer-center a {
+    color: #888;
+    text-decoration: none !important;
+    font-size: 14px;
+    transition: 0.3s;
+}
+/* Link Hover karne par green hoga */
+.footer-center a:hover {
+    color: #00ff99;
+}
+
+/* Right Column (Social Links) */
+.footer-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-social-links a {
+    color: #888;
+    text-decoration: none !important;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.footer-social-links a i {
+    margin-right: 8px; /* Icon aur text ke beech ki space */
+    color: #00ff99; /* Icons ka color green */
+}
+.footer-social-links a:hover {
+    color: white; /* Hover karne par text thoda white/bright ho jayega */
+}
+
+/* Copyright line decoration */
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 40px;
+    padding-top: 20px;
+    color: #555;
+    font-size: 13px;
+}
