@@ -55,19 +55,19 @@ My-P-Portfolio-Website
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](images/home.png)
+![Home Page](home.png)
 
 ### 👩‍💻 About Page
-![About Page](images/about.png)
+![About Page](about.png)
 
 ### 🛠️ Skills Section
-![Skills Section](images/skills.png)
+![Skills Section](skills.png)
 
 ### 📂 Projects Section
-![Projects Section](images/projects.png)
+![Projects Section](project.png)
 
 ### 📩 Contact Page
-![Contact Page](images/contact.png)
+![Contact Page](contact.png)
 ---
 
 ## 💡 Included Projects
