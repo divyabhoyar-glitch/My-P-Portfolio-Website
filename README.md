@@ -52,7 +52,22 @@ My-P-Portfolio-Website
 ├── app.css         # Complete website styling
 └── README.md       # Documentation
 ```
+## 📸 Screenshots
 
+### 🏠 Home Page
+![Home Page](images/home.png)
+
+### 👩‍💻 About Page
+![About Page](images/about.png)
+
+### 🛠️ Skills Section
+![Skills Section](images/skills.png)
+
+### 📂 Projects Section
+![Projects Section](images/projects.png)
+
+### 📩 Contact Page
+![Contact Page](images/contact.png)
 ---
 
 ## 💡 Included Projects
